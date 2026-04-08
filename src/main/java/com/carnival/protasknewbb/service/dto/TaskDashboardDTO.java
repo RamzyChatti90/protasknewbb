@@ -75,9 +75,9 @@ public class TaskDashboardDTO implements Serializable {
         }
 
         TaskDashboardDTO taskDashboardDTO = (TaskDashboardDTO) o;
-        if (this.id == null) {
-            return false;
-        }
+        // Corrected equals method to handle null IDs more robustly,
+        // allowing two DTOs with null IDs to be considered equal if no other criteria are present.
+        // This leverages Objects.equals() which correctly handles null for both arguments.
         return Objects.equals(this.id, taskDashboardDTO.id);
     }
 
