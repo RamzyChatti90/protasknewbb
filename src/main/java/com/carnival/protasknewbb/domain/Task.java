@@ -1,5 +1,7 @@
 package com.carnival.protasknewbb.domain;
 
+import com.carnival.protasknewbb.domain.AbstractAuditingEntity;
+import com.carnival.protasknewbb.domain.User;
 import com.carnival.protasknewbb.domain.enumeration.TaskStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
