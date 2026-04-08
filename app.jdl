@@ -1,0 +1,57 @@
+application {
+  config {
+    baseName protasknewbb
+    packageName com.protasknewbb
+    applicationType monolith
+    authenticationType jwt
+    databaseType sql
+    devDatabaseType h2Disk
+    prodDatabaseType postgresql
+    enableTranslation Boolean
+    nativeLanguage fr
+    languages [fr, en]
+    clientFramework angular
+    buildTool maven
+    serverPort 9000
+  }
+  entities *
+}
+
+enum Priority {
+  LOW, MEDIUM, HIGH, URGENT
+}
+
+enum Status {
+  TODO, IN_PROGRESS, DONE, BLOCKED
+}
+
+entity Task {
+  title String required
+  description String
+  priority Priority
+  status Status
+  dueDate LocalDate
+  createdAt Instant
+}
+
+entity Category {
+  name String required
+  color String
+  icon String
+}
+
+entity Comment {
+  author String
+  content TextBlob
+  createdAt Instant
+}
+
+relationship ManyToOne {
+  Task{assignee} to User with builtInEntity
+  Task{category} to Category
+  Comment{task} to Task
+}
+
+paginate * with pagination
+service * with serviceImpl
+dto * with mapstruct
