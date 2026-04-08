@@ -29,6 +29,18 @@ public class TaskService {
     }
 
     /**
+     * Interface for task status count projection.
+     * This is defined here to resolve compilation errors if `TaskRepository.TaskStatusCount` is not found,
+     * and only `TaskService.java` can be modified.
+     * In a typical project, this would be an inner interface of `TaskRepository` or a separate DTO interface
+     * in the `com.carnival.protasknewbb.repository` or `com.carnival.protasknewbb.service.dto` package.
+     */
+    public interface TaskStatusCount {
+        TaskStatus getStatus();
+        Long getCount();
+    }
+
+    /**
      * Save a task.
      *
      * @param task the entity to save.
@@ -155,6 +167,6 @@ public class TaskService {
         return taskRepository
             .countTasksByStatusForUser(userId)
             .stream()
-            .collect(Collectors.toMap(TaskRepository.TaskStatusCount::getStatus, TaskRepository.TaskStatusCount::getCount));
+            .collect(Collectors.toMap(TaskService.TaskStatusCount::getStatus, TaskService.TaskStatusCount::getCount));
     }
 }
