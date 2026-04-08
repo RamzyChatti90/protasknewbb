@@ -1,0 +1,12 @@
+package com.carnival.protasknewbb.repository;
+
+import com.carnival.protasknewbb.domain.Authority;
+import org.springframework.data.jpa.repository.*;
+import org.springframework.stereotype.Repository;
+
+/**
+ * Spring Data JPA repository for the Authority entity.
+ */
+@SuppressWarnings("unused")
+@Repository
+public interface AuthorityRepository extends JpaRepository<Authority, String> {}

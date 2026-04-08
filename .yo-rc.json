@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "protasknewbb",
+    "buildTool": "maven",
+    "clientFramework": "angular",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "entities": [],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "MTMwNTZlYWFlZWY0ZTE3ZjJhODFkNGMxMDQwNmYxY2E2Y2VkNDA0M2Q4OGQ4YmQzMDY5NzQ4ZjY3ZTlkZjQ4MmRlZjk2M2UxOGEzYjEwYTdlZTAxMWRkMGFiMzgwMTkxN2Q0NDdhNzkxODNiN2FjYjNiODYxODM3NWRiZTkyMWU=",
+    "languages": ["en"],
+    "nativeLanguage": "en",
+    "packageName": "com.carnival.protasknewbb",
+    "prodDatabaseType": "postgresql",
+    "serverPort": "9000"
+  }
+}
